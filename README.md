@@ -1,6 +1,6 @@
 # gsu
 
-For Morgan Stanley:
+For Schwab:
 
 Follow the instructions at
 

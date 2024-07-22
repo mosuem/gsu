@@ -23,7 +23,7 @@ class MainApp extends StatelessWidget {
           child: Column(
             children: [
               const SelectableText('''
-For Morgan Stanley:
+For Schwab:
 
 Follow the instructions at
 
