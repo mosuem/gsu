@@ -20,9 +20,25 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         body: Center(
-          child: TextButton(
-            onPressed: () => readAndWrite(),
-            child: const Text('Load and calculate'),
+          child: Column(
+            children: [
+              const SelectableText('''
+For Morgan Stanley:
+
+Follow the instructions at
+
+https://screenshot.googleplex.com/8rYj3UYcgwKnW8r
+
+Click the button and upload the JSON.
+
+It should download a XLSX. Retrieve the value under TOTAL.
+
+Profit!'''),
+              TextButton(
+                onPressed: () => readAndWrite(),
+                child: const Text('Load and calculate'),
+              ),
+            ],
           ),
         ),
       ),
@@ -90,9 +106,11 @@ class MainApp extends StatelessWidget {
         rowNumber++;
       }
     }
-    table.cell(CellIndex.indexByString('P${rowNumber + 1}')).value =
-        FormulaCellValue('SUM(P$j:P${rowNumber - 1})');
     table.cell(CellIndex.indexByString('Q${rowNumber + 1}')).value =
+        const TextCellValue('TOTAL:');
+    table.cell(CellIndex.indexByString('P${rowNumber + 2}')).value =
+        FormulaCellValue('SUM(P$j:P${rowNumber - 1})');
+    table.cell(CellIndex.indexByString('Q${rowNumber + 2}')).value =
         FormulaCellValue('SUM(Q$j:Q${rowNumber - 1})');
 
     var name = 'GSU_Taxes_${fromDate.fmtDate}_-_${toDate.fmtDate}';
@@ -123,9 +141,9 @@ class DataRow {
   });
 
   List<(CellValue?, CellStyle)> toRow(int row) {
-    var dateStyle = CellStyle()
+    var dateStyle = CellStyle(bold: false)
       ..numberFormat = NumFormat.custom(formatCode: 'yyyy-mm-dd');
-    var style = CellStyle()..numberFormat = NumFormat.standard_2;
+    var style = CellStyle(bold: false)..numberFormat = NumFormat.standard_2;
     return [
       (DateCellValue.fromDateTime(vesting.date), dateStyle),
       (DoubleCellValue(vesting.fmvUsd), style),
