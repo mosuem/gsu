@@ -47328,7 +47328,7 @@ aD(){var s,r=this
 r.b2()
 r.r=new A.Q7(r,r)
 r.a.toString
-s=A.d6(null,null,"For Morgan Stanley:\n\nFollow the instructions at\n\nhttps://screenshot.googleplex.com/8rYj3UYcgwKnW8r\n\nClick the button and upload the JSON.\n\nIt should download a XLSX. Retrieve the value under TOTAL.\n\nProfit!")
+s=A.d6(null,null,"For Schwab:\n\nFollow the instructions at\n\nhttps://screenshot.googleplex.com/8rYj3UYcgwKnW8r\n\nClick the button and upload the JSON.\n\nIt should download a XLSX. Retrieve the value under TOTAL.\n\nProfit!")
 s=A.aEf(s)
 r.d=s
 s.Z(0,r.ga1X())},
