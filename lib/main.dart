@@ -34,10 +34,11 @@ Click the button and upload the JSON.
 It should download a XLSX. Retrieve the value under TOTAL.
 
 Profit!'''),
-              TextButton(
+              ElevatedButton(
                 onPressed: () => readAndWrite(),
                 child: const Text('Load and calculate'),
               ),
+              const Text('v0.2 mosum@'),
             ],
           ),
         ),
