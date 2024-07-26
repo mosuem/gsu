@@ -88,7 +88,7 @@ Profit!'''),
           verkauf: Verkauf(
             fmvUsd: toPrice(detail['SalePrice'] as String),
             transaktionskostenUsd: toPrice(transaction['FeesAndCommissions']),
-            sellDate: asDate(transaction['Date'] as String),
+            date: asDate(transaction['Date'] as String),
           ),
         );
         print(dataRow);
@@ -149,44 +149,88 @@ class DataRow {
       (DoubleCellValue(vesting.fmvUsd), style),
       (
         FormulaCellValue(
-            'index(GoogleFinance("CURRENCY:USDEUR", "price", DATE(${verkauf.sellDate.year}, ${verkauf.sellDate.month.toString().padLeft(2, '0')}, ${verkauf.sellDate.day.toString().padLeft(2, '0')})), 2, 2)'),
+            'index(GoogleFinance("CURRENCY:USDEUR", "price", DATE(${vesting.date.year}, ${vesting.date.month.toString().padLeft(2, '0')}, ${vesting.date.day.toString().padLeft(2, '0')})), 2, 2)'),
         style
       ),
-      (FormulaCellValue('B$row*C$row'), style),
+      (
+        FormulaCellValue(
+            '${tab['FMV in \$']}$row*${tab['Umrechnungskurs']}$row'),
+        style
+      ),
       (DoubleCellValue(vesting.anzahl), style),
-      (FormulaCellValue('D$row*E$row'), style),
+      (FormulaCellValue('${tab['FMV in €']}$row*${tab['Anzahl']}$row'), style),
       (null, style),
       (DoubleCellValue(verkauf.fmvUsd), style),
-      (FormulaCellValue('H$row*C$row'), style),
+      (
+        FormulaCellValue(
+            '${tab['VFMV in \$']}$row*${tab['VUmrechnungskurs']}$row'),
+        style
+      ),
+      (
+        FormulaCellValue(
+            'index(GoogleFinance("CURRENCY:USDEUR", "price", DATE(${verkauf.date.year}, ${verkauf.date.month.toString().padLeft(2, '0')}, ${verkauf.date.day.toString().padLeft(2, '0')})), 2, 2)'),
+        style
+      ),
       (DoubleCellValue(verkauf.transaktionskostenUsd), style),
-      (FormulaCellValue('J$row*C$row'), style),
-      (FormulaCellValue('I$row*E$row-K$row'), style),
+      (
+        FormulaCellValue(
+            '${tab['Transaktionskosten in \$']}$row*${tab['VUmrechnungskurs']}$row'),
+        style
+      ),
+      (
+        FormulaCellValue(
+            '${tab['VFMV in €']}$row*${tab['Anzahl']}$row-${tab['Transaktionskosten in €']}$row'),
+        style
+      ),
       (null, style),
-      (FormulaCellValue('F$row'), style),
-      (FormulaCellValue('L$row'), style),
-      (FormulaCellValue('O$row-N$row'), style),
-      (FormulaCellValue('0.25 * P$row'), style),
+      (FormulaCellValue('${tab['Total Cost / Gesamte Kosten']}$row'), style),
+      (FormulaCellValue('${tab['VTotal Cost / Gesamte Kosten']}$row'), style),
+      (
+        FormulaCellValue(
+            '${tab['Gesamte Kosten Vesting']}$row-${tab['Gesamte Kosten Verkauf']}$row'),
+        style
+      ),
+      (FormulaCellValue('0.25 * ${tab['Gewinn']}$row'), style),
     ];
   }
+
+  final tab = <String, String>{
+    'Date': 'A',
+    'FMV in \$': 'B',
+    'Umrechnungskurs': 'C',
+    'FMV in €': 'D',
+    'Anzahl': 'E',
+    'Total Cost / Gesamte Kosten': 'F',
+    'VFMV in \$': 'H',
+    'VFMV in €': 'I',
+    'VUmrechnungskurs': 'J',
+    'Transaktionskosten in \$': 'K',
+    'Transaktionskosten in €': 'L',
+    'VTotal Cost / Gesamte Kosten': 'M',
+    'Gesamte Kosten Vesting': 'O',
+    'Gesamte Kosten Verkauf': 'P',
+    'Gewinn': 'Q',
+    '25%': 'R',
+  };
 
   @override
   String toString() => 'DataRow(vesting: $vesting, verkauf: $verkauf)';
 }
 
 class Verkauf {
-  final DateTime sellDate;
+  final DateTime date;
   final double fmvUsd;
   final double transaktionskostenUsd;
 
   Verkauf({
-    required this.sellDate,
+    required this.date,
     required this.fmvUsd,
     required this.transaktionskostenUsd,
   });
 
   @override
   String toString() =>
-      'Verkauf(sellDate: $sellDate, fmvUsd: $fmvUsd, transaktionskostenUsd: $transaktionskostenUsd)';
+      'Verkauf(sellDate: $date, fmvUsd: $fmvUsd, transaktionskostenUsd: $transaktionskostenUsd)';
 }
 
 class Vesting {
