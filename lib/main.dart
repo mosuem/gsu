@@ -38,7 +38,7 @@ Profit!'''),
                 onPressed: () => readAndWrite(),
                 child: const Text('Load and calculate'),
               ),
-              const Text('v0.2 mosum@'),
+              const Text('v0.3 mosum@'),
             ],
           ),
         ),
@@ -188,7 +188,7 @@ class DataRow {
       (FormulaCellValue('${tab['VTotal Cost / Gesamte Kosten']}$row'), style),
       (
         FormulaCellValue(
-            '${tab['Gesamte Kosten Vesting']}$row-${tab['Gesamte Kosten Verkauf']}$row'),
+            '${tab['Gesamte Kosten Verkauf']}$row-${tab['Gesamte Kosten Vesting']}$row'),
         style
       ),
       (FormulaCellValue('0.25 * ${tab['Gewinn']}$row'), style),
