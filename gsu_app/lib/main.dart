@@ -2,7 +2,6 @@
 
 import 'dart:convert';
 
-import 'package:excel/excel.dart';
 import 'package:file_saver/file_saver.dart';
 import 'package:file_selector/file_selector.dart';
 import 'package:flutter/material.dart';
@@ -39,7 +38,7 @@ Profit!'''),
                 onPressed: () => readAndWrite(),
                 child: const Text('Load and calculate'),
               ),
-              const Text('v0.3 mosum@'),
+              const Text('v0.4 mosum@'),
             ],
           ),
         ),
