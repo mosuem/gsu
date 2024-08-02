@@ -22,5 +22,6 @@ Profit!
 Run
 ```bash
 cd gsu_cli
+dart pub get
 dart run bin/gsu_cli.dart --inputFile EquityAwardsCenter_Transactions.json --templateFile ../gsu_app/assets/gsu_template.xlsx --outputFolder .
 ```
