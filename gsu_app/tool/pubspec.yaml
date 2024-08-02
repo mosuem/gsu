@@ -1,4 +1,4 @@
-name: gsu
+name: gsu_cli
 description: A GSU calculator for schwab
 publish_to: 'none'
 version: 0.1.0
@@ -7,26 +7,11 @@ environment:
   sdk: ^3.6.0-53.0.dev
 
 dependencies:
-  flutter:
-    sdk: flutter
-  file_selector: ^1.0.3
   excel: ^4.0.3
-  file_saver: ^0.2.13
-
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  flutter_lints: ^4.0.0
   args: ^2.5.0
   path: ^1.9.0
 
 dependency_overrides:
   archive: 3.6.1
-
-
-flutter:
-  uses-material-design: true
-
-  assets:
-    - assets/gsu_template.xlsx

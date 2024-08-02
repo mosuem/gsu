@@ -1,19 +1,18 @@
 // ignore_for_file: avoid_print
 
 import 'dart:convert';
+import 'dart:typed_data';
 import 'package:excel/excel.dart';
-import 'package:flutter/services.dart';
-import 'package:gsu/main.dart';
+import 'package:gsu_cli/dataclasses.dart';
 
-Future<(String, List<int>)> computeCapitalGains(String dataStr) async {
+Future<(String, List<int>)> computeCapitalGains(
+    String dataStr, Uint8List templateBytes) async {
   var decoded = jsonDecode(dataStr) as Map;
   var fromDate = asDate(decoded['FromDate']);
   var toDate = asDate(decoded['ToDate']);
   var transactions = decoded["Transactions"] as List;
 
-  ByteData data = await rootBundle.load('assets/gsu_template.xlsx');
-  var bytes = data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
-  var template = Excel.decodeBytes(bytes);
+  var template = Excel.decodeBytes(templateBytes);
   var sheetName = template.tables.keys.first;
 
   var table = template.tables[sheetName]!;
@@ -54,10 +53,16 @@ Future<(String, List<int>)> computeCapitalGains(String dataStr) async {
   }
   table.cell(CellIndex.indexByString('Q${rowNumber + 1}')).value =
       const TextCellValue('TOTAL:');
-  table.cell(CellIndex.indexByString('P${rowNumber + 2}')).value =
-      FormulaCellValue('SUM(P$j:P${rowNumber - 1})');
-  table.cell(CellIndex.indexByString('Q${rowNumber + 2}')).value =
-      FormulaCellValue('SUM(Q$j:Q${rowNumber - 1})');
+  table
+          .cell(CellIndex.indexByString('${DataRow.tab['Gewinn']}${rowNumber + 2}'))
+          .value =
+      FormulaCellValue(
+          'SUM(${DataRow.tab['Gewinn']}$j:${DataRow.tab['Gewinn']}${rowNumber - 1})');
+  table
+          .cell(CellIndex.indexByString('${DataRow.tab['25%']}${rowNumber + 2}'))
+          .value =
+      FormulaCellValue(
+          'SUM(${DataRow.tab['25%']}$j:${DataRow.tab['25%']}${rowNumber - 1})');
 
   var name = 'GSU_Taxes_${fromDate.fmtDate}_-_${toDate.fmtDate}';
   var resultBytes = template.save(fileName: '$name.xlsx')!;

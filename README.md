@@ -15,3 +15,12 @@ Click the button and upload the JSON.
 It should download a XLSX. Retrieve the value under TOTAL.
 
 Profit!
+
+
+## CLI usage
+
+Run
+```bash
+cd gsu_cli
+dart run bin/gsu_cli.dart --inputFile EquityAwardsCenter_Transactions.json --templateFile ../gsu_app/assets/gsu_template.xlsx --outputFolder .
+```
