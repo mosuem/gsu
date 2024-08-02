@@ -18,6 +18,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
+  args: ^2.5.0
+  path: ^1.9.0
 
 dependency_overrides:
   archive: 3.6.1

@@ -72160,7 +72160,7 @@ $S:20}
 A.a56.prototype={}
 A.GU.prototype={
 T(a){var s=null
-return new A.wN(new A.y7(A.uM(A.ajS(A.b([B.Ma,new A.FA(new A.a0A(this),s,s,s,s,s,s,!1,s,!0,B.Sy,s),B.Sx],t.af),B.qz),s,s),s),s)},
+return new A.wN(new A.y7(A.uM(A.ajS(A.b([B.Ma,new A.FA(new A.a0A(this),s,s,s,s,s,s,!1,s,!0,B.Sx,s),B.Sy],t.af),B.qz),s,s),s),s)},
 mr(){var s=0,r=A.S(t.H),q,p=this,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,c0,c1,c2
 var $async$mr=A.T(function(c3,c4){if(c3===1)return A.P(c4,r)
 while(true)switch(s){case 0:b8=A.b([B.z4],t.es)
@@ -72208,7 +72208,7 @@ a9.cy=A.apN("yyyy-mm-dd")
 b0=A.Ep(B.bw,!1,null,null,!1,!1,B.ax,null,null,null,B.ds,!1,null,B.cL,null,0,null,null,B.aI,B.cQ)
 b0.cy=B.jc
 b1=""+d
-b2=[new A.au(new A.fw(A.f7(a3),A.hw(a3),A.ie(a3)),a9),new A.au(new A.ez(a4),b0),new A.au(new A.cF(u.u+A.f7(a3)+", "+B.d.j8(B.e.k(A.hw(a3)),2,"0")+", "+B.d.j8(B.e.k(A.ie(a3)),2,"0")+")), 2, 2)"),b0),new A.au(new A.cF(A.l(a8.i(0,"FMV in $"))+b1+"*"+A.l(a8.i(0,"Umrechnungskurs"))+b1),b0),new A.au(new A.ez(a5),b0),new A.au(new A.cF(A.l(a8.i(0,"FMV in \u20ac"))+b1+"*"+A.l(a8.i(0,"Anzahl"))+b1),b0),new A.au(null,b0),new A.au(new A.ez(a1),b0),new A.au(new A.cF(A.l(a8.i(0,"VFMV in $"))+b1+"*"+A.l(a8.i(0,"VUmrechnungskurs"))+b1),b0),new A.au(new A.cF(u.u+A.f7(a7)+", "+B.d.j8(B.e.k(A.hw(a7)),2,"0")+", "+B.d.j8(B.e.k(A.ie(a7)),2,"0")+")), 2, 2)"),b0),new A.au(new A.ez(a6),b0),new A.au(new A.cF(A.l(a8.i(0,"Transaktionskosten in $"))+b1+"*"+A.l(a8.i(0,"VUmrechnungskurs"))+b1),b0),new A.au(new A.cF(A.l(a8.i(0,"VFMV in \u20ac"))+b1+"*"+A.l(a8.i(0,"Anzahl"))+b1+"-"+A.l(a8.i(0,"Transaktionskosten in \u20ac"))+b1),b0),new A.au(null,b0),new A.au(new A.cF(A.l(a8.i(0,"Total Cost / Gesamte Kosten"))+b1),b0),new A.au(new A.cF(A.l(a8.i(0,"VTotal Cost / Gesamte Kosten"))+b1),b0),new A.au(new A.cF(A.l(a8.i(0,"Gesamte Kosten Vesting"))+b1+"-"+A.l(a8.i(0,"Gesamte Kosten Verkauf"))+b1),b0),new A.au(new A.cF("0.25 * "+A.l(a8.i(0,"Gewinn"))+b1),b0)]
+b2=[new A.au(new A.fw(A.f7(a3),A.hw(a3),A.ie(a3)),a9),new A.au(new A.ez(a4),b0),new A.au(new A.cF(u.u+A.f7(a3)+", "+B.d.j8(B.e.k(A.hw(a3)),2,"0")+", "+B.d.j8(B.e.k(A.ie(a3)),2,"0")+")), 2, 2)"),b0),new A.au(new A.cF(A.l(a8.i(0,"FMV in $"))+b1+"*"+A.l(a8.i(0,"Umrechnungskurs"))+b1),b0),new A.au(new A.ez(a5),b0),new A.au(new A.cF(A.l(a8.i(0,"FMV in \u20ac"))+b1+"*"+A.l(a8.i(0,"Anzahl"))+b1),b0),new A.au(null,b0),new A.au(new A.ez(a1),b0),new A.au(new A.cF(A.l(a8.i(0,"VFMV in $"))+b1+"*"+A.l(a8.i(0,"VUmrechnungskurs"))+b1),b0),new A.au(new A.cF(u.u+A.f7(a7)+", "+B.d.j8(B.e.k(A.hw(a7)),2,"0")+", "+B.d.j8(B.e.k(A.ie(a7)),2,"0")+")), 2, 2)"),b0),new A.au(new A.ez(a6),b0),new A.au(new A.cF(A.l(a8.i(0,"Transaktionskosten in $"))+b1+"*"+A.l(a8.i(0,"VUmrechnungskurs"))+b1),b0),new A.au(new A.cF(A.l(a8.i(0,"VFMV in \u20ac"))+b1+"*"+A.l(a8.i(0,"Anzahl"))+b1+"-"+A.l(a8.i(0,"Transaktionskosten in \u20ac"))+b1),b0),new A.au(null,b0),new A.au(new A.cF(A.l(a8.i(0,"Total Cost / Gesamte Kosten"))+b1),b0),new A.au(new A.cF(A.l(a8.i(0,"VTotal Cost / Gesamte Kosten"))+b1),b0),new A.au(new A.cF(A.l(a8.i(0,"Gesamte Kosten Verkauf"))+b1+"-"+A.l(a8.i(0,"Gesamte Kosten Vesting"))+b1),b0),new A.au(new A.cF("0.25 * "+A.l(a8.i(0,"Gewinn"))+b1),b0)]
 for(a1=d-1,b3=0;b3<18;++b3){a3=b2[b3]
 a4=a3.a
 if(a4!=null){b4=new A.jL(a1,b3)
@@ -79464,8 +79464,8 @@ B.Rm=new A.v(!0,B.r,null,"Roboto",B.H,null,null,null,null,null,null,null,null,nu
 B.Sv=new A.e_(B.S2,B.PJ,B.Qw,B.Rb,B.Ro,B.Pg,B.Qa,B.Pk,B.R_,B.RA,B.QD,B.RB,B.RK,B.Rc,B.Rm)
 B.Sw=new A.JZ(0,"WrapText")
 B.wW=new A.JZ(1,"Clip")
-B.Sx=new A.oN("v0.2 mosum@",null,null,null,null,null)
-B.Sy=new A.oN("Load and calculate",null,null,null,null,null)
+B.Sx=new A.oN("Load and calculate",null,null,null,null,null)
+B.Sy=new A.oN("v0.3 mosum@",null,null,null,null,null)
 B.Vu=new A.a9R(0,"system")
 B.KB=new A.i(0.05,0)
 B.KC=new A.i(0.133333,0.06)
